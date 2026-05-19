@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Contact — Julia Kempf</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Cormorant+SC:wght@300;400;500&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="top">
+  <a class="mark" href="index.html">Julia Kempf</a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="repertoire.html">Repertoire</a></li>
+    <li><a href="demos.html">Sample demos</a></li>
+    <li><a href="teaching.html">Voice Teaching</a></li>
+  </ul>
+  <a class="cta" href="contact.html">Contact</a>
+</nav>
+
+<header class="page-header">
+  <div class="inner">
+    <h2>Sessions, gigs, <em>&amp; inquiries.</em></h2>
+    <p class="section-sub">For booking, session work, teaching inquiries, or collaboration — get in touch.</p>
+  </div>
+</header>
+
+<section class="contact">
+  <div class="grid">
+    <!--
+      ─── Form delivery ──────────────────────────────────────────────
+      This form uses Formspree (free tier: 50 submissions/month).
+      Setup: sign up at https://formspree.io, create a form, copy the
+      form ID, and replace YOUR_FORMSPREE_ID in the action below.
+      Submissions will be emailed to the address registered on Formspree.
+      ────────────────────────────────────────────────────────────────
+    -->
+    <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+      <!-- Subject line of the email Formspree sends -->
+      <input type="hidden" name="_subject" value="New inquiry from juliakempf.com">
+      <!-- Redirect after successful submission -->
+      <input type="hidden" name="_next" value="/thanks">
+      <!-- Honeypot anti-spam (Formspree picks this up automatically) -->
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+      <div class="form-row">
+        <label>Your name</label>
+        <input type="text" name="name" placeholder="Full name" required>
+      </div>
+      <div class="form-row">
+        <label>Email address</label>
+        <input type="email" name="email" placeholder="you@email.com" required>
+      </div>
+      <div class="form-row">
+        <label>Inquiry type</label>
+        <select name="inquiry-type">
+          <option>Performance / gig booking</option>
+          <option>Session work</option>
+          <option>Voice lessons</option>
+          <option>Press / general</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>Message</label>
+        <textarea name="message" placeholder="Tell me about your project, event, or what you're looking for…" required></textarea>
+      </div>
+      <button type="submit" class="btn solid">Send Message</button>
+    </form>
+
+    <div class="details">
+      <div class="block">
+        <strong>Email</strong>
+        <span><a href="mailto:juliaekempf@gmail.com">juliaekempf@gmail.com</a></span>
+      </div>
+      <div class="block">
+        <strong>Based in</strong>
+        <span>Los Angeles, California<br><span style="font-size:.88rem;color:var(--muted)">In-person sessions &amp; lessons · Online worldwide</span></span>
+      </div>
+      <div class="block">
+        <strong>Response time</strong>
+        <span>Within 2 business days</span>
+      </div>
+      <div class="block">
+        <strong>Follow</strong>
+        <div class="socials">
+          <a href="https://www.instagram.com/juliakempfmusic/" target="_blank" rel="noopener">Instagram ↗</a>
+          <a href="https://www.youtube.com/@juliakempf9076" target="_blank" rel="noopener">YouTube ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div>
+    <div class="f-logo">Julia Kempf</div>
+    <div class="f-tag">Soprano · Voice Teacher</div>
+  </div>
+  <div class="f-center">© 2026 · All Rights Reserved</div>
+  <div class="f-right">
+    <a href="mailto:juliaekempf@gmail.com">juliaekempf@gmail.com</a>
+  </div>
+</footer>
+
+</body>
+</html>
