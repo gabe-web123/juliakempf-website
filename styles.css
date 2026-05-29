@@ -392,11 +392,53 @@ footer.site .f-right a{
 }
 footer.site .f-right a:hover{color:#fff;border-color:#fff}
 
+/* ─── MOBILE NAV (hamburger toggle) ─── */
+.nav-toggle{position:absolute;left:-9999px;opacity:0;pointer-events:none}
+.nav-hamburger{display:none}
+.mobile-only{display:none}
+
 /* ─── RESPONSIVE ─── */
 @media(max-width:960px){
   html{font-size:16px}
-  nav.top{padding:1rem 1.25rem}
-  nav.top ul{display:none}
+  nav.top{padding:.85rem 1.25rem;position:relative}
+
+  /* hide desktop CTA — Contact lives in the dropdown on mobile */
+  nav.top .cta{display:none}
+  .mobile-only{display:list-item}
+
+  /* Hamburger button */
+  .nav-hamburger{
+    display:flex;flex-direction:column;justify-content:center;gap:6px;
+    width:42px;height:42px;padding:0 9px;margin-left:auto;cursor:pointer;
+  }
+  .nav-hamburger span{
+    display:block;width:24px;height:1.5px;background:var(--ink);
+    transition:transform .25s, opacity .2s;transform-origin:center;
+  }
+  .nav-toggle:checked + .nav-hamburger span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .nav-toggle:checked + .nav-hamburger span:nth-child(2){opacity:0}
+  .nav-toggle:checked + .nav-hamburger span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+
+  /* Mobile dropdown panel */
+  nav.top ul{
+    display:none;position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;gap:0;
+    background:var(--cream);
+    border-bottom:1px solid var(--border);
+    box-shadow:0 8px 24px rgba(24,20,16,.06);
+    padding:.4rem 0 1rem;text-align:center;z-index:30;
+    font-size:.95rem;letter-spacing:.18em;
+  }
+  .nav-toggle:checked ~ ul{display:flex}
+  nav.top ul li{padding:1rem 0;border-top:1px solid var(--border)}
+  nav.top ul li:first-child{border-top:none}
+  nav.top ul li.mobile-only{
+    margin-top:.4rem;padding:1.1rem 0;
+    color:var(--magenta);font-weight:500;
+    border-top:1px solid var(--magenta-pale);
+    background:#fff;
+  }
+  nav.top ul li.mobile-only a{color:var(--magenta)}
   section{padding:4rem 1.5rem}
   .page-header{padding:3rem 1.5rem 2rem}
   .hero{grid-template-columns:1fr;min-height:auto}
