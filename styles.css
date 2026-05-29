@@ -114,8 +114,8 @@ h2 em{font-style:italic;color:var(--magenta)}
   display:grid;grid-template-columns:1fr 1fr;padding:0;
 }
 .hero .words{
-  padding:6rem 4.5rem 6rem 3.5rem;
-  display:flex;flex-direction:column;justify-content:center;
+  padding:3.5rem 4.5rem 5rem 3.5rem;
+  display:flex;flex-direction:column;justify-content:flex-start;
   border-right:1px solid var(--border);
 }
 .words .kicker{color:var(--green-mid)}
