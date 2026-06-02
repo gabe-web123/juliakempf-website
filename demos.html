@@ -161,5 +161,42 @@
   </div>
 </footer>
 
+<script>
+  // ─── Audio demo player ──────────────────────────────────────────
+  // Click the thumb to play/pause. Only one demo plays at a time.
+  // A magenta progress bar fills along the bottom of the thumb.
+  document.addEventListener('DOMContentLoaded', function () {
+    var audios = document.querySelectorAll('.demo audio');
+    audios.forEach(function (audio) {
+      var demo  = audio.closest('.demo');
+      var thumb = demo.querySelector('.thumb');
+      var bar   = document.createElement('div');
+      bar.className = 'progress';
+      thumb.appendChild(bar);
+
+      thumb.addEventListener('click', function () {
+        if (audio.paused) {
+          audios.forEach(function (a) { if (a !== audio) a.pause(); });
+          audio.play();
+        } else {
+          audio.pause();
+        }
+      });
+
+      audio.addEventListener('play',   function () { thumb.classList.add('playing'); });
+      audio.addEventListener('pause',  function () { thumb.classList.remove('playing'); });
+      audio.addEventListener('ended',  function () {
+        thumb.classList.remove('playing');
+        bar.style.width = '0';
+      });
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) {
+          bar.style.width = ((audio.currentTime / audio.duration) * 100) + '%';
+        }
+      });
+    });
+  });
+</script>
+
 </body>
 </html>

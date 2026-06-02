@@ -277,7 +277,27 @@ h2 em{font-style:italic;color:var(--magenta)}
   font-family:var(--serif);font-style:italic;font-weight:400;
   font-size:1rem;color:var(--muted);
 }
-.demo audio{width:100%;margin-top:.75rem;accent-color:var(--magenta)}
+.demo audio{display:none}
+
+/* Hide the decorative play button on cards that have nothing to play */
+.demo:not(:has(audio,iframe)) .play{display:none}
+
+/* Thumb becomes clickable when it has audio or video */
+.demo:has(audio,iframe) .thumb{cursor:pointer}
+
+/* Pause icon (two vertical bars) when an audio card is playing */
+.demo .thumb.playing .play{background:var(--magenta-dk)}
+.demo .thumb.playing .play::after{
+  width:4px;height:14px;border:none;background:#fff;
+  margin-left:-5px;box-shadow:6px 0 0 #fff;
+}
+
+/* Progress bar at bottom of the audio thumb, filled by JS */
+.demo .thumb .progress{
+  position:absolute;left:0;bottom:0;height:3px;
+  width:0;background:var(--magenta);
+  transition:width .1s linear;z-index:3;
+}
 
 /* ─── TEACHING ─── */
 .teaching{background:var(--magenta-pale);border-top:1px solid rgba(139,34,82,.12)}
