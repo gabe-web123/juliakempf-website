@@ -345,6 +345,28 @@ h2 em{font-style:italic;color:var(--magenta)}
 
 /* ─── CONTACT ─── */
 .contact{background:var(--cream)}
+.contact-simple{
+  max-width:900px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:2rem;
+}
+.contact-simple .item{
+  background:#fff;border:1px solid var(--border);border-radius:6px;
+  padding:2.5rem 2rem;text-align:center;
+}
+.contact-simple strong{
+  display:block;font-family:var(--sans);font-size:.74rem;font-weight:500;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--green-mid);margin-bottom:.8rem;
+}
+.contact-simple a{
+  font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--ink);
+  border-bottom:1px solid var(--border);padding-bottom:2px;transition:all .2s;
+  word-break:break-word;
+}
+.contact-simple a:hover{color:var(--magenta);border-color:var(--magenta)}
+@media(max-width:960px){
+  .contact-simple{grid-template-columns:1fr;gap:1.25rem}
+  .contact-simple a{font-size:1.3rem}
+}
 .contact .grid{
   display:grid;grid-template-columns:1.4fr 1fr;gap:5rem;
   max-width:1200px;margin:0 auto;
